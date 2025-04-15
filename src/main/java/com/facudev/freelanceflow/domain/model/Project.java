@@ -1,14 +1,12 @@
-package com.facudev.freelanceflow.domain;
+package com.facudev.freelanceflow.domain.model;
 
-import com.facudev.freelanceflow.enums.ProjectStatus;
-import lombok.Builder;
+import com.facudev.freelanceflow.domain.enums.ProjectStatus;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -16,7 +14,7 @@ import java.util.Date;
 @SuperBuilder
 public class Project {
 
-    private long projectId;
+    private long id;
     private String name;
     private String description;
     private Budget budget;

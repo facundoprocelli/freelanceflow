@@ -1,20 +1,16 @@
-package com.facudev.freelanceflow.domain;
+package com.facudev.freelanceflow.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 public class Credentials {
-    private long credentialsId;
+    private long id;
     private String email;
     private String cellphone;
     private String password;
     private boolean active;
-
-    public Credentials(){}
 }

@@ -1,15 +1,14 @@
-package com.facudev.freelanceflow.domain;
+package com.facudev.freelanceflow.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.facudev.freelanceflow.domain.model.Credentials;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
-@Getter
-@Setter
-@ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @SuperBuilder
 public class User {
 
@@ -18,5 +17,4 @@ public class User {
     private String surname;
     private Date birthday;
     private Credentials credentials;
-    public User(){}
 }

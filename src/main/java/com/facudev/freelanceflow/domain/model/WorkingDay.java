@@ -1,18 +1,15 @@
-package com.facudev.freelanceflow.domain;
+package com.facudev.freelanceflow.domain.model;
 
-import com.facudev.freelanceflow.enums.ProjectStatus;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.jdbc.Work;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Getter
-@Setter
-@ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @SuperBuilder
 public class WorkingDay {
 
@@ -25,6 +22,4 @@ public class WorkingDay {
     private LocalTime restFinishTime;
     private User user;
     private Project project;
-
-    public WorkingDay(){}
 }

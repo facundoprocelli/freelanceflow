@@ -1,4 +1,4 @@
-package com.facudev.freelanceflow.enums;
+package com.facudev.freelanceflow.domain.enums;
 
 public enum ProjectStatus {
     PENDING,

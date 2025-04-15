@@ -1,13 +1,12 @@
-package com.facudev.freelanceflow.domain;
+package com.facudev.freelanceflow.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Getter
-@Setter
-@ToString
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @SuperBuilder
 public class Client {
     private long clientId;
@@ -16,5 +15,4 @@ public class Client {
     private String email;
     private String cellphone;
 
-    public Client(){}
 }
