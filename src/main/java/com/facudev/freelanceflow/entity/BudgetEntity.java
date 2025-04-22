@@ -17,5 +17,5 @@ public class BudgetEntity {
     private float estimatedHours;
 
     @OneToOne(mappedBy = "budget")
-    private ProjectEntity porject;
+    private ProjectEntity porjectEntity;
 }

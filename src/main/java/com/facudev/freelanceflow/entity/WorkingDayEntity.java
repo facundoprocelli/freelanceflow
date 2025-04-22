@@ -21,12 +21,12 @@ public class WorkingDayEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long workingDayId;
+    private long id;
 
     private String description;
 
     @Temporal(TemporalType.DATE)
-    private LocalDate day;
+    private LocalDate workDay;
     @Temporal(TemporalType.TIME)
     private LocalTime startTime;
     @Temporal(TemporalType.TIME)
@@ -36,8 +36,12 @@ public class WorkingDayEntity {
     @Temporal(TemporalType.TIME)
     private LocalTime restFinishTime;
 
-    //Todo: Hacer las relaciones de los user y projects
-    private User user;
-    private Project project;
+    @ManyToOne(fetch =  FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id", referencedColumnName = "id")
+    private ProjectEntity project;
 
 }

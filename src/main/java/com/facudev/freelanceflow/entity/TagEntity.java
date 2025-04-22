@@ -21,7 +21,7 @@ public class TagEntity {
     @Column(unique = true, nullable = false)
     private String tagName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "porject_id", nullable = false)
-    private ProjectEntity project;
+    private ProjectEntity projectEntity;
 }

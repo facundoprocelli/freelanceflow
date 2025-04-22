@@ -12,7 +12,7 @@ public class CredentialsEntity {
     private long id;
     @Column(unique = true)
     @Email
-    private  String mail;
+    private  String email;
     @Column(unique = true, length = 13)
     private String cellphone;
     @Column()

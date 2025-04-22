@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long clientId;
+    private long id;
 
     private String name;
     private String surname;
@@ -24,4 +24,7 @@ public class ClientEntity {
     private String email;
     @Column(length = 13)
     private String cellphone;
+
+    @OneToOne(mappedBy = "client")
+    private ProjectEntity porjectEntity;
 }

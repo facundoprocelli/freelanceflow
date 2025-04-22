@@ -15,7 +15,7 @@ public class WorkingDay {
 
     private long workingDayId;
     private String description;
-    private LocalDate day;
+    private LocalDate workDay;
     private LocalTime startTime;
     private LocalTime finishTime;
     private LocalTime restStartTime;

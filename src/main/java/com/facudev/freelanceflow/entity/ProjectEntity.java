@@ -6,16 +6,15 @@ import com.facudev.freelanceflow.domain.model.Client;
 import com.facudev.freelanceflow.domain.model.Tag;
 import com.facudev.freelanceflow.domain.model.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "projects")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProjectEntity {
@@ -40,9 +39,20 @@ public class ProjectEntity {
     @JoinColumn(name = "project_budget_id", referencedColumnName = "id", unique = true)
     private BudgetEntity budget;
 
-    @OneToMany(mappedBy = "tags", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<TagEntity> tags;
-    private Client client;
-    private User owner;
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
+    private ClientEntity client;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
+    private UserEntity user;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    private List<WorkingDayEntity> workingDayEntityList;
 
 }
